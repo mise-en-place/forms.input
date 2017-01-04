@@ -1,0 +1,71 @@
+// ==========================================================================
+// INPUT
+// ==========================================================================
+/*doc
+---
+title: Inputs
+name: 4_inputs
+category: forms
+---
+
+```html_example
+<form class="">
+    <input class="input" placeholder="Start typing...">
+</form>
+```
+
+```html_example
+<form class="">
+    <textarea class="input">Start typing...</textarea>
+</form>
+```
+*/
+
+.input {
+    @include font-scale(small);
+    @include font-family(type-config(headings-family));
+    color: black;
+    background-color: white;
+    border: 1px solid palette(grey);
+    border-radius: rem-calc(2);
+    padding: rem-calc(11 8 8);
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+
+    // [1] For some reason Autoprefixr doesnt support the `appearance` property
+    -webkit-appearance: none; /*[1]*/
+    -moz-appearance: none; /*[1]*/
+    appearance: none; /*[1]*/
+
+    display: block;
+
+    @include placeholder {
+        color: palette(grey, dark);
+    }
+
+
+    &:active,
+    &:focus {
+        border-color: palette(teal);
+    }
+
+    .has--error & {
+        border-color: palette(error);
+    }
+}
+
+
+.input--inline {
+    padding-right: rem-calc(48); // width of .btn--inline + 8
+    height: rem-calc(41);
+}
+
+.input--square {
+    border-radius: 0;
+}
+
+textarea.input {
+    resize: vertical;
+    height: rem-calc(200);
+}

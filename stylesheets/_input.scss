@@ -21,6 +21,10 @@ category: forms
 ```
 */
 
+@import "tool-rem-calc";
+@import "tool-palette";
+@import "font-scale";
+
 .input {
     @include font-scale(small);
     @include font-family(type-config(headings-family));

@@ -21,9 +21,9 @@ category: forms
 ```
 */
 
-@import "tool-rem-calc";
-@import "tool-palette";
-@import "font-scale";
+@import "~mep-tools.rem-calc";
+@import "~mep-tools.palette";
+@import "~mep-tools.font-scale";
 
 .input {
     @include font-scale(small);
